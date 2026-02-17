@@ -1,0 +1,19 @@
+{
+    "name": "sincotecs-website",
+    "version": "1.0.0",
+    "description": "Society of Information & Communications Technology Students — Official Website",
+    "type": "module",
+    "scripts": {
+        "dev": "vite",
+        "build": "vite build",
+        "preview": "vite preview"
+    },
+    "devDependencies": {
+        "vite": "^6.1.0"
+    },
+    "dependencies": {
+        "gsap": "^3.12.7",
+        "three": "^0.172.0",
+        "lazysizes": "^5.3.2"
+    }
+}

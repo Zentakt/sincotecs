@@ -1,0 +1,68 @@
+﻿node : C:\sincotecs_p
+rofile\extract-pdf.js
+:6
+At line:1 char:1
++ node 
+extract-pdf.js 2>&1 
+| Out-File -FilePath 
+"pdf-output.txt" 
+-Encod ...
++ ~~~~~~~~~~~~~~~~~~~
+~~~~~
+    + CategoryInfo   
+           : NotSpe  
+  cified: (C:\sinc   
+ otecs_profile\ex    
+tract-pdf.js:6:S    
+tring) [], Remot    
+eException
+    + FullyQualified 
+   ErrorId : Native  
+  CommandError
+ 
+  const data = await 
+pdf(dataBuffer);
+                     
+^
+
+TypeError: pdf is 
+not a function
+    at extractPDF (C:
+\sincotecs_profile\ex
+tract-pdf.js:6:22)
+    at C:\sincotecs_p
+rofile\extract-pdf.js
+:14:9
+    at 
+Object.<anonymous> (C
+:\sincotecs_profile\e
+xtract-pdf.js:16:3)
+    at 
+Module._compile (node
+:internal/modules/cjs
+/loader:1554:14)
+    at Object..js (no
+de:internal/modules/c
+js/loader:1706:10)
+    at Module.load (n
+ode:internal/modules/
+cjs/loader:1289:32)
+    at 
+Function._load (node:
+internal/modules/cjs/
+loader:1108:12)
+    at TracingChannel
+.traceSync (node:diag
+nostics_channel:322:1
+4)
+    at 
+wrapModuleLoad (node:
+internal/modules/cjs/
+loader:220:24)
+    at Function.execu
+teUserEntryPoint [as 
+runMain] (node:intern
+al/modules/run_main:1
+70:5)
+
+Node.js v22.14.0

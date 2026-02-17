@@ -1,0 +1,234 @@
+/* ── Accomplishments Redesign (Year Dialer) ── */
+.accomplishments-wrapper {
+    position: relative;
+    width: 100%;
+    min-height: 60vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+    padding: var(--sp-8) 0;
+}
+
+.accomplishments-display {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 80px;
+    /* Space for dialer */
+    perspective: 1000px;
+    width: 100%;
+    height: 100%;
+}
+
+/* Dialer Container */
+.accomplishments-dialer-container {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 120px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.95), transparent);
+    z-index: 10;
+    pointer-events: none;
+    /* Let clicks pass through if not on dialer */
+}
+
+.dialer-wrapper {
+    pointer-events: auto;
+    position: relative;
+    height: 80px;
+    width: 100%;
+    max-width: 800px;
+    /* Limit width */
+    overflow: hidden;
+    /* Mask edges for fade effect */
+    mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+    -webkit-mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+    cursor: grab;
+    display: flex;
+    align-items: center;
+    /* justify-content: flex-start;  Let content flow */
+}
+
+.dialer-wrapper:active {
+    cursor: grabbing;
+}
+
+.dialer {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    align-items: flex-end;
+    position: absolute;
+    /* Essential for Draggable */
+    left: 50%;
+    /* Center start */
+    bottom: 0;
+}
+
+.dialer li {
+    position: relative;
+    flex: 0 0 100px;
+    /* Fixed width per year tick */
+    height: 60%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    color: rgba(255, 255, 255, 0.3);
+    font-family: var(--ff-mono);
+    font-size: var(--fs-xs);
+    transition: color 0.3s ease;
+    user-select: none;
+}
+
+/* Tick Mark */
+.dialer li::after {
+    content: '';
+    width: 1px;
+    height: 40%;
+    /* Line height */
+    background: rgba(255, 255, 255, 0.2);
+    margin-top: 8px;
+    transition: background 0.3s ease, height 0.3s ease, box-shadow 0.3s;
+}
+
+/* Active State */
+.dialer li.active {
+    color: var(--clr-primary-400);
+}
+
+.dialer li.active::after {
+    background: var(--clr-primary-400);
+    height: 80%;
+    width: 2px;
+    box-shadow: 0 0 8px var(--clr-primary-500);
+}
+
+.dialer li span {
+    transform: translateY(-5px);
+    font-weight: bold;
+    opacity: 0.5;
+    transition: opacity 0.3s;
+}
+
+.dialer li.active span {
+    opacity: 1;
+    transform: translateY(-8px) scale(1.2);
+}
+
+/* Center Indicator */
+.dialer-wrapper::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 2px;
+    height: 40px;
+    background: linear-gradient(to top, var(--clr-accent-cyan), transparent);
+    z-index: -1;
+    opacity: 0.5;
+}
+
+/* Content Styles */
+.accomplishment-year-content {
+    text-align: center;
+    max-width: 800px;
+    opacity: 0;
+    /* transform: translateY(20px); handled by GSAP */
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+}
+
+.accomplishment-year-content.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.acc-title {
+    font-size: var(--fs-4xl);
+    font-family: var(--ff-display);
+    margin-bottom: var(--sp-2);
+    background: linear-gradient(135deg, #fff, var(--clr-primary-200));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    text-transform: uppercase;
+    letter-spacing: -0.02em;
+}
+
+.acc-subtitle {
+    font-size: var(--fs-lg);
+    color: var(--clr-primary-400);
+    margin-bottom: var(--sp-8);
+    font-family: var(--ff-mono);
+}
+
+.acc-stats {
+    display: flex;
+    gap: var(--sp-8);
+    justify-content: center;
+    margin-bottom: var(--sp-8);
+    flex-wrap: wrap;
+}
+
+.acc-stat-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.03);
+    padding: var(--sp-4) var(--sp-6);
+    border-radius: var(--radius-md);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(4px);
+}
+
+.acc-stat-val {
+    font-size: var(--fs-3xl);
+    font-weight: 800;
+    color: var(--clr-accent-cyan);
+    font-family: var(--ff-heading);
+}
+
+.acc-stat-lbl {
+    font-size: var(--fs-xs);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--clr-text-muted);
+    margin-top: var(--sp-1);
+}
+
+.acc-highlights {
+    text-align: left;
+    max-width: 500px;
+    margin: 0 auto;
+    list-style: none;
+    padding: 0;
+}
+
+.acc-highlights li {
+    display: flex;
+    gap: var(--sp-3);
+    margin-bottom: var(--sp-3);
+    font-size: var(--fs-base);
+    color: var(--clr-text-secondary);
+    line-height: var(--lh-relaxed);
+}
+
+.acc-highlights li::before {
+    content: '✓';
+    color: var(--clr-primary-400);
+    font-weight: bold;
+}
