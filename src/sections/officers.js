@@ -57,17 +57,22 @@ function renderOfficerCards() {
 
     const officers = getOfficersForBatch(currentBatch);
 
-    grid.innerHTML = officers.map(officer => `
+    grid.innerHTML = officers.map(officer => {
+        const photoUrl = officer.photo
+            ? (officer.photo.startsWith('http') ? officer.photo : `${import.meta.env.BASE_URL}${officer.photo}`)
+            : null;
+
+        return `
     <article class="officer-card"
              role="listitem"
              tabindex="0"
              data-officer-id="${officer.id}"
              aria-label="${officer.name}, ${officer.position}">
       <div class="officer-photo">
-        ${officer.photo
-            ? `<img src="${officer.photo}" alt="Photo of ${officer.name}" loading="lazy" />`
-            : `<span class="officer-photo-placeholder" aria-hidden="true">👤</span>`
-        }
+        ${photoUrl
+                ? `<img src="${photoUrl}" alt="Photo of ${officer.name}" loading="lazy" />`
+                : `<span class="officer-photo-placeholder" aria-hidden="true">👤</span>`
+            }
         <div class="officer-overlay">
           <!-- Hover effect on photo only (zoom) -->
         </div>
@@ -77,7 +82,8 @@ function renderOfficerCards() {
         <div class="officer-name-label">${officer.name}</div>
       </div>
     </article>
-  `).join('');
+  `;
+    }).join('');
 
     // Grid entrance animation
     if (!prefersReducedMotion) {
@@ -142,12 +148,16 @@ function openOfficerModal(officerId) {
         </li>
     `).join('');
 
+    const photoUrl = officer.photo
+        ? (officer.photo.startsWith('http') ? officer.photo : `${import.meta.env.BASE_URL}${officer.photo}`)
+        : '';
+
     // Construct new Rich HTML
     const newHtml = `
         <!-- Left Sidebar / Photo -->
         <aside class="modal-sidebar">
             <div class="modal-officer-photo">
-                <img src="${officer.photo || ''}" alt="Photo of ${officer.name}" 
+                <img src="${photoUrl}" alt="Photo of ${officer.name}" 
                      style="width:100%; height:auto; display:block; object-fit:contain;">
             </div>
             <div class="tech-stat-grid">
