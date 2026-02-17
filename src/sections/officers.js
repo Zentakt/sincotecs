@@ -167,7 +167,9 @@ function openOfficerModal(officerId) {
                 </div>
                 <div class="tech-stat-item">
                     <span class="tech-stat-label">Status</span>
-                    <span class="tech-stat-value" style="color:#10b981">ACTIVE</span>
+                    <span class="tech-stat-value" style="color: ${officer.batch === '2023-2024' ? 'rgba(255, 255, 255, 0.4)' : '#10b981'}">
+                        ${officer.batch === '2023-2024' ? 'INACTIVE' : 'ACTIVE'}
+                    </span>
                 </div>
             </div>
         </aside>
