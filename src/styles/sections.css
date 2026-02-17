@@ -1198,7 +1198,8 @@
     border: 1px solid rgba(255, 255, 255, 0.05);
     border-radius: var(--radius-sm);
     position: relative;
-    overflow: hidden;
+    overflow: visible;
+    /* Changed from hidden to ensure no clipping */
 }
 
 .tech-screen-header {
@@ -1446,30 +1447,33 @@
 
 /* ULTRA-BOLD SCROLLBAR FOR VISIBILITY v3 (Final Fix) */
 .modal-content-area {
-    overflow-y: scroll !important;
-    /* Force content scrollbar */
+    overflow-y: auto !important;
+    /* Changed from scroll to auto to only show when needed, but ensured it works */
+    display: flex !important;
+    flex-direction: column !important;
+    gap: var(--sp-6) !important;
     scrollbar-width: auto !important;
-    scrollbar-color: var(--clr-primary-500) #1a0b2e !important;
+    scrollbar-color: var(--clr-primary-500) rgba(15, 10, 30, 0.95) !important;
 }
 
 .modal-sidebar {
-    overflow: hidden !important;
-    /* HIDE sidebar scrollbar */
+    overflow-y: auto !important;
+    /* Allow sidebar scroll too just in case */
+    flex: 0 0 320px !important;
+    scrollbar-width: thin !important;
+    scrollbar-color: var(--clr-primary-500) transparent !important;
 }
 
 /* Force visible scrollbar on Webkit (Content Only) */
 .modal-content-area::-webkit-scrollbar {
     width: 14px !important;
     display: block !important;
-    background-color: #1a0b2e !important;
-    border-left: 1px solid rgba(255, 255, 255, 0.1) !important;
 }
 
 .modal-content-area::-webkit-scrollbar-thumb {
     background-color: var(--clr-primary-500) !important;
     border-radius: 20px !important;
     border: 3px solid #1a0b2e !important;
-    box-shadow: none !important;
 }
 
 .modal-content-area::-webkit-scrollbar-track {

@@ -188,7 +188,7 @@ function openOfficerModal(officerId) {
                     <span>// OVERVIEW</span>
                 </div>
                 <div class="tech-screen-body">
-                    <p class="officer-quote">${(officer.short_description && officer.short_description.length > 5) ? officer.short_description : "Mission parameters restricted."}</p>
+                    <p class="officer-quote">${officer.short_description || "Mission parameters restricted: Profile unavailable or classified."}</p>
                 </div>
             </div>
 
