@@ -27,7 +27,26 @@
     rel="stylesheet" />
 
   <!-- Favicon -->
-  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="icon" id="favicon" type="image/png" href="assets/officers/sincotecslogo.png" />
+  <script>
+    // Ensure favicon is square to prevent stretching
+    (function () {
+      const img = new Image();
+      img.src = 'assets/officers/sincotecslogo.png';
+      img.onload = function () {
+        const canvas = document.createElement('canvas');
+        canvas.width = 64;
+        canvas.height = 64;
+        const ctx = canvas.getContext('2d');
+        const size = Math.min(img.width, img.height);
+        const x = (img.width - size) / 2;
+        const y = (img.height - size) / 2;
+        ctx.drawImage(img, x, y, size, size, 0, 0, 64, 64);
+        const favicon = document.getElementById('favicon');
+        favicon.href = canvas.toDataURL('image/png');
+      };
+    })();
+  </script>
 </head>
 
 <body>
