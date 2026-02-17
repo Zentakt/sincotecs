@@ -344,17 +344,15 @@ button {
     color: var(--clr-text-primary);
 }
 
+.nav-logo-img {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+    filter: drop-shadow(var(--shadow-glow));
+}
+
 .nav-logo-icon {
-    width: 36px;
-    height: 36px;
-    border-radius: 50%;
-    background: linear-gradient(135deg, var(--clr-primary-600), var(--clr-primary-400));
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: var(--fs-sm);
-    font-weight: var(--fw-extrabold);
-    box-shadow: var(--shadow-glow);
+    display: none;
 }
 
 .nav-links {
