@@ -6,6 +6,11 @@
             "summary": "The current batch of SINCOTECS officers serving the ITE student body at Davao Central College."
         },
         {
+            "year_range": "2024-2025",
+            "is_current": false,
+            "summary": "The transition batch that matured organizational processes and expanded student engagement programs."
+        },
+        {
             "year_range": "2023-2024",
             "is_current": false,
             "summary": "The founding batch under the revised CBL, establishing key programs and organizational structure."
@@ -191,6 +196,102 @@
             "email": "",
             "social_links": {},
             "order_index": 15
+        },
+        {
+            "id": "log-2024",
+            "name": "Abigail Comedido",
+            "position": "Logistics Committee",
+            "batch": "2024-2025",
+            "short_description": "Manages event logistics, materials, equipment, and venue coordination.",
+            "full_description": "The Logistics Committee manages the procurement, preparation, and arrangement of materials and equipment for organizational events.",
+            "photo": "assets/officers/poster_2024_1.jpg",
+            "email": "",
+            "social_links": {},
+            "order_index": 7
+        },
+        {
+            "id": "wh-2024",
+            "name": "Leonard Joseph Velasco",
+            "position": "Working Head Committee",
+            "batch": "2024-2025",
+            "short_description": "Leads project execution, coordinates working committees for organizational events.",
+            "full_description": "The Working Head Committee leads the on-the-ground execution of organizational projects and activities.",
+            "photo": "assets/officers/poster_2024_1.jpg",
+            "email": "",
+            "social_links": {},
+            "order_index": 8
+        },
+        {
+            "id": "griev-2024",
+            "name": "Michaela Nicole Falcatan",
+            "position": "Student Grievance Committee",
+            "batch": "2024-2025",
+            "short_description": "Receives and investigates student complaints, represents student grievances.",
+            "full_description": "Caters/entertains any kind of complaint or grievances brought to its disposition. Conducts investigations in coordination with the proper personnel.",
+            "photo": "assets/officers/poster_2024_2.jpg",
+            "email": "",
+            "social_links": {},
+            "order_index": 9
+        },
+        {
+            "id": "disc-2024",
+            "name": "Harvey Doblon",
+            "position": "Discipline & Policies Committee",
+            "batch": "2024-2025",
+            "short_description": "Enforces discipline, reviews code of conduct violations, and recommends actions.",
+            "full_description": "Reviewing alleged violations of the Code of Conduct and related policies. Conducting impartial hearings with fairness, transparency, and confidentiality.",
+            "photo": "assets/officers/poster_2024_2.jpg",
+            "email": "",
+            "social_links": {},
+            "order_index": 10
+        },
+        {
+            "id": "sec-2024",
+            "name": "Jasmine Duran",
+            "position": "Secretary",
+            "batch": "2024-2025",
+            "short_description": "Manages meeting minutes, records, notices, and serves as property custodian.",
+            "full_description": "Shall take the minutes of all meetings called by the Local Council. Shall keep all the records of the Local Council. Shall issue calls and notices of all meetings.",
+            "photo": "",
+            "email": "",
+            "social_links": {},
+            "order_index": 3
+        },
+        {
+            "id": "tres-2024",
+            "name": "Ryan Miguel Tonzo",
+            "position": "Treasurer",
+            "batch": "2024-2025",
+            "short_description": "Handles collections, bank signatories, disbursements, and financial reporting.",
+            "full_description": "Shall take charge of the collections of the Local Council. Shall be one of the signatories of the Local Council bank account.",
+            "photo": "",
+            "email": "",
+            "social_links": {},
+            "order_index": 4
+        },
+        {
+            "id": "aud-2024",
+            "name": "Jhon Lloyd Dioso",
+            "position": "Auditor",
+            "batch": "2024-2025",
+            "short_description": "Audits accounts, receipts, expenditures, and ensures fiscal accountability.",
+            "full_description": "Shall audit accounts, receipts of and expenditures/uses of funds and property owned/held entrust by the Local Council.",
+            "photo": "",
+            "email": "",
+            "social_links": {},
+            "order_index": 5
+        },
+        {
+            "id": "pro-2024",
+            "name": "Shaira Rendon",
+            "position": "Public Relations Officer",
+            "batch": "2024-2025",
+            "short_description": "Promotes organizational objectives, manages public image and communications.",
+            "full_description": "Shall popularize the thrust and objectives of the Local Council. Shall build and maintain a credible image for Local Council.",
+            "photo": "",
+            "email": "",
+            "social_links": {},
+            "order_index": 6
         },
         {
             "id": "gov-2023",
